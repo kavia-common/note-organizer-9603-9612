@@ -12,7 +12,8 @@ Widget _buildTestApp({required INoteRepository repo}) {
     providers: [
       Provider<INoteRepository>.value(value: repo),
       ChangeNotifierProvider<NotesProvider>(
-        create: (context) => NotesProvider(repository: context.read<INoteRepository>())..initialize(),
+        create: (context) => NotesProvider(repository: context.read<INoteRepository>())
+          ..initialize(),
       ),
     ],
     child: MaterialApp(
